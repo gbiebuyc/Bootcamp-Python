@@ -35,9 +35,7 @@ class ScrapBooker:
         return np.concatenate((arr,)*n, axis)
 
     def mosaic(self, arr, dimensions):
-        arr = self.juxtapose(arr, dimensions[0], 0)
-        arr = self.juxtapose(arr, dimensions[1], 1)
-        return arr
+        return np.tile(arr, dimensions + (1,))
 
 
 imp = ImageProcessor()

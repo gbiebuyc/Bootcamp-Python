@@ -1,21 +1,4 @@
-#!/usr/bin/env python3
 import numpy as np
-from PIL import Image
-
-class ImageProcessor:
-    def load(self, path):
-        im = Image.open(path)
-        width, height = im.size
-        print('Loading image of dimensions %d x %d' % (width, height))
-        array = np.array(im, dtype=np.float32)
-        array /= 255
-        return array
-
-    def display(self, array):
-        array *= 255
-        array = array.astype(np.uint8)
-        im = Image.fromarray(array)
-        im.show()
 
 class ScrapBooker:
     def crop(self, arr, dimensions, position=(0, 0)):
@@ -36,18 +19,3 @@ class ScrapBooker:
 
     def mosaic(self, arr, dimensions):
         return np.tile(arr, dimensions + (1,))
-
-
-# imp = ImageProcessor()
-# sb = ScrapBooker()
-# 
-# arr = imp.load("../resources/42AI.png")
-# print(arr.shape)
-# # arr = sb.thin(arr, 3, 1)
-# # arr = sb.crop(arr, (80, 80), (50, 50))
-# # arr = sb.crop(arr, (800, 80), (50, 50))
-# # arr = sb.juxtapose(arr, 3, 1)
-# arr = sb.mosaic(arr, (2, 4))
-# print(arr.shape)
-# imp.display(arr)
-

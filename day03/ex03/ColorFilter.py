@@ -19,7 +19,7 @@ class ColorFilter:
 
     def celluloid(self, arr, num_tresholds=4):
         arr *= num_tresholds
-        arr = arr.astype(np.int8)
+        arr = arr.astype(np.uint8)
         arr = arr.astype(np.float32)
         arr /= num_tresholds
         return arr

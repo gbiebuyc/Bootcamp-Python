@@ -1,21 +1,4 @@
-#!/usr/bin/env python3
 import numpy as np
-from PIL import Image
-
-class ImageProcessor:
-    def load(self, path):
-        im = Image.open(path)
-        width, height = im.size
-        print('Loading image of dimensions %d x %d' % (width, height))
-        array = np.array(im, dtype=np.float32)
-        array /= 255
-        return array
-
-    def display(self, array):
-        array *= 255
-        array = array.astype(np.uint8)
-        im = Image.fromarray(array)
-        im.show()
 
 
 class ColorFilter:
@@ -52,16 +35,3 @@ class ColorFilter:
             arr = np.sum(arr, axis=2, keepdims=True)
             arr = np.tile(arr, (1, 1, 3))
             return arr
-
-
-# imp = ImageProcessor()
-# cf = ColorFilter()
-# 
-# arr = imp.load("../resources/elon_musk.jpg")
-# #arr = cf.invert(arr)
-# #arr = cf.to_blue(arr)
-# #arr = cf.to_green(arr)
-# #arr = cf.to_red(arr)
-# #arr = cf.celluloid(arr)
-# arr = cf.to_grayscale(arr, 'w')
-# imp.display(arr)

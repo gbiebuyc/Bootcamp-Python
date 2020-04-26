@@ -41,6 +41,7 @@ class ColorFilter:
         arr /= num_tresholds
         return arr
 
+     # grayscale not working
 #    def to_grayscale(self, arr, filter="w"):
 #        if filter == 'm' or filter == 'mean':
 #            shape = arr.shape
@@ -53,13 +54,13 @@ class ColorFilter:
 #            return np.dot(arr[...,:3], [0.299, 0.587, 0.114])
 
 
-imp = ImageProcessor()
-cf = ColorFilter()
-
-arr = imp.load("../resources/elon_musk.jpg")
-#arr = cf.invert(arr)
-#arr = cf.to_blue(arr)
-#arr = cf.to_green(arr)
-#arr = cf.to_red(arr)
-arr = cf.celluloid(arr)
-imp.display(arr)
+# imp = ImageProcessor()
+# cf = ColorFilter()
+# 
+# arr = imp.load("../resources/elon_musk.jpg")
+# #arr = cf.invert(arr)
+# #arr = cf.to_blue(arr)
+# #arr = cf.to_green(arr)
+# #arr = cf.to_red(arr)
+# arr = cf.celluloid(arr)
+# imp.display(arr)

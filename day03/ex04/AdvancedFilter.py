@@ -31,9 +31,9 @@ class AdvancedFilter:
         return ret
 
 
-imp = ImageProcessor()
-af = AdvancedFilter()
-
-arr = imp.load("../resources/elon_musk.jpg")
-arr = af.mean_blur(arr)
-imp.display(arr)
+# imp = ImageProcessor()
+# af = AdvancedFilter()
+# 
+# arr = imp.load("../resources/elon_musk.jpg")
+# arr = af.mean_blur(arr)
+# imp.display(arr)

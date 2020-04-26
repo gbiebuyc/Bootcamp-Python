@@ -4,9 +4,7 @@ class ScrapBooker:
     def crop(self, arr, dimensions, position=(0, 0)):
         p1 = position
         p2 = (p1[0]+dimensions[0], p1[1]+dimensions[1])
-        w = arr.shape[1]
-        h = arr.shape[0]
-        if p2[0] > h or p2[1] > w:
+        if p2[0] > arr.shape[0] or p2[1] > arr.shape[1]:
             raise Exception('dimensions is larger than the current image size.')
         arr = arr[p1[0]:p2[0], p1[1]:p2[1]]
         return arr

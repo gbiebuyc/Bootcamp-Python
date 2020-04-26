@@ -47,8 +47,11 @@ class ColorFilter:
             arr = np.sum(arr, axis=2, keepdims=True) / 3
             arr = np.broadcast_to(arr, shape)
             return 1 * arr
-#         if filter == 'w' or filter == 'weighted':
-#             return np.dot(arr[...,:3], [0.299, 0.587, 0.114])
+        if filter == 'w' or filter == 'weighted':
+            arr *= [0.299, 0.587, 0.114]
+            arr = np.sum(arr, axis=2, keepdims=True)
+            arr = np.tile(arr, (1, 1, 3))
+            return arr
 
 
 # imp = ImageProcessor()
@@ -60,5 +63,5 @@ class ColorFilter:
 # #arr = cf.to_green(arr)
 # #arr = cf.to_red(arr)
 # #arr = cf.celluloid(arr)
-# arr = cf.to_grayscale(arr, 'm')
+# arr = cf.to_grayscale(arr, 'w')
 # imp.display(arr)
